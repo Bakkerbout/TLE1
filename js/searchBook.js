@@ -1,60 +1,89 @@
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById('searchButton').addEventListener('click', function () {
-        const query = document.getElementById('searchInput').value;
-        if (query) {
-            fetchData(query);
-        } else {
-            alert('Voer een zoekterm in!');
-        }
-    });
-})
+window.addEventListener('load', init);
 
-async function fetchData(query) {
-    const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=40`; // Vervang met jouw API-link
-    try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error('Fout bij het ophalen van gegevens');
-        const data = await response.json();
-        console.log("API data:", data);
-        displayResults(data);
-    } catch (error) {
-        console.error('Error:', error);
-        document.getElementById('results').innerHTML = 'Er is een fout opgetreden.';
+function init() {
+
+    let searchButton = document.getElementById('searchButton')
+    searchButton.addEventListener('click', actionSearch)
+    //event listener op zoek button zetten
+}
+
+function actionSearch() {
+    //kijken of er iets in de zoekbalk staat.
+    // zo ja, haal de data uit de api op
+    // zo nee, geef een warning dat  r niks is ingevuld
+    const query = document.getElementById('searchInput').value;
+    if (query) {
+        fetchData(query);
+    } else {
+        alert('Zoekveld is nog leeg');
     }
 }
 
-function displayResults(data) {
-    const resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = ''; // Oude resultaten wissen
-    if (data && data.items && data.items.length > 0) {
-        data.items.forEach(item => {
-            const info = item.volumeInfo;
+function fetchData(query) {
+    const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&maxResults=40`;
 
-            // Maak een container
-            const div = document.createElement('div');
-            div.classList.add('book');
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(response.statusText)
+            }
+            return response.json()
+        })
+        .then(getResults)
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('results').innerHTML = 'Er is een fout opgetreden.';
+        })
+
+}
+
+function getResults(data) {
+    //zodra data is opgehaald data laten zien
+    console.log("API data:", data);
+    displayResults(data);
+
+}
+
+function displayResults(data) {
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = '';
+    if (data && data.items && data.items.length > 0) {
+        data.items.forEach(book => {
+
+            const {title, authors, imageLinks} = book.volumeInfo
+            const bookId = book.id
+            // const info = item.volumeInfo;
+
+            // main container
+            let bookDiv = document.createElement("div");
+            bookDiv.className = "book"
+            bookDiv.dataset.id = bookId
 
             // Titel
-            const title = document.createElement('h3');
-            title.textContent = info.title || 'Geen titel';
-            div.appendChild(title);
+            let bookTitle = document.createElement("h3");
+            bookTitle.textContent = title || "Geen titel";
+            bookDiv.appendChild(bookTitle);
 
             // Auteurs
-            if (info.authors) {
-                const authors = document.createElement('p');
-                authors.textContent = "Auteur(s): " + info.authors.join(', ');
-                div.appendChild(authors);
+            if (authors) {
+                let authorsElement = document.createElement("p");
+                authorsElement.textContent = "Auteur(s): " + authors.join(', ');
+                bookDiv.appendChild(authorsElement);
             }
 
-            // Thumbnail
-            if (info.imageLinks && info.imageLinks.thumbnail) {
-                const img = document.createElement('img');
-                img.src = info.imageLinks.thumbnail;
-                img.alt = info.title;
-                div.appendChild(img);
+            // Thumbnail / cover foto
+            if (imageLinks?.thumbnail) {
+                let img = document.createElement("img");
+                img.src = imageLinks.thumbnail;
+                img.alt = title || '';
+                bookDiv.appendChild(img);
             }
 
-            resultsDiv.appendChild(div);
+            let link = document.createElement("a")
+            link.href = `bookDetails.php?id=${bookId}`
+            link.appendChild(bookDiv)
+
+            resultsDiv.appendChild(link);
         });
     } else {
         resultsDiv.innerHTML = 'Geen resultaten gevonden.';

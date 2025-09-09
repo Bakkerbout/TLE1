@@ -15,9 +15,10 @@
             <input type="text" id="searchInput" placeholder="Zoek een boek">
             <button id="searchButton">Zoeken</button>
 
-            <div id="results" class="shelf-row"></div>
+            <!--            <div id="results" class="shelf-row"></div>-->
 
         </div>
+        <div id="results" class="shelf-row"></div>
     </div>
     <div class="background-img"></div>
 </main>
