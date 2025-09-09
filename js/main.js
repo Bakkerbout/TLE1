@@ -16,14 +16,8 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=Harry+Potter&maxResults=40"
             const thumbnail = book.volumeInfo.imageLinks?.thumbnail;
 
             let bookDiv = document.createElement("div");
-
-            if (thumbnail) {
-                bookDiv.className = "book-cover";
-                bookDiv.style.backgroundImage = `url(${thumbnail})`;
-            } else {
-                bookDiv.className = "book-spine";
-                bookDiv.textContent = title;
-            }
+            bookDiv.className = "book-spine";
+            bookDiv.textContent = title;
 
             shelves[shelfIndex].appendChild(bookDiv);
 
