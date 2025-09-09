@@ -11,6 +11,31 @@
 <body>
 <main>
     <div class="background-img"></div>
+    <div class="shelf-table">
+        <table class="table">
+            <!--            <thead class="table-header">-->
+            <!--            <td></td>-->
+            <!--            </thead>-->
+            <tbody class="table-body">
+            <td></td>
+            </tbody>
+            <tbody class="table-body">
+            <td></td>
+            </tbody>
+            <tbody class="table-body">
+            <td></td>
+            </tbody>
+            <tbody class="table-body">
+            <td></td>
+            </tbody>
+            <tbody class="table-body">
+            <td></td>
+            </tbody>
+            <!--            <tfoot class="table-footer">-->
+            <!--            <td></td>-->
+            <!--            </tfoot>-->
+        </table>
+    </div>
 </main>
 </body>
 </html>
