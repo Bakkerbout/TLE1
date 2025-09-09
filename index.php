@@ -11,6 +11,7 @@
 <body>
 <main>
     <div class="background-img"></div>
+    <a href="searchBook.php">Zoek boeken</a>
     <div class="bookshelf">
         <div class="shelf-row" id="shelf-1">
         </div>
@@ -35,7 +36,6 @@
         <div class="shelf-row" id="shelf-5">
         </div>
     </div>
-
 </main>
 </body>
 </html>
