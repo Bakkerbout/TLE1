@@ -34,19 +34,15 @@
 }
 
 .book-spine {
-    width: 25px;
+    width: 40px;
     height: 120px;
-    background: linear-gradient(90deg, #333, #666);
-    color: #000000;
+    background-color: #088;
+    color: #ffffff;
     font-size: 10px;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     text-align: center;
-    border: 5px solid #088;
-    border-top: 10px solid #088;
-    border-bottom: 10px solid #088;
     opacity: 1;
-    border-radius: 2px;
     cursor: pointer;
 }
 
@@ -55,11 +51,7 @@
     height: 120px;
     background-size: cover;
     background-position: center;
-    border: 5px solid #088;
-    border-top: 10px solid #088;
-    border-bottom: 10px solid #088;
     opacity: 1;
-    border-radius: 2px;
     cursor: pointer;
 }
 
