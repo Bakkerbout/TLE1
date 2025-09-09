@@ -36,25 +36,6 @@
         </div>
     </div>
 
-    <!--    <div class="shelf-table">-->
-    <!--        <table class="table">-->
-    <!--            <tbody class="table-body">-->
-    <!--            <td></td>-->
-    <!--            </tbody>-->
-    <!--            <tbody class="table-body">-->
-    <!--            <td></td>-->
-    <!--            </tbody>-->
-    <!--            <tbody class="table-body">-->
-    <!--            <td></td>-->
-    <!--            </tbody>-->
-    <!--            <tbody class="table-body">-->
-    <!--            <td></td>-->
-    <!--            </tbody>-->
-    <!--            <tbody class="table-body">-->
-    <!--            <td></td>-->
-    <!--            </tbody>-->
-    <!--        </table>-->
-    <!--    </div>-->
 </main>
 </body>
 </html>
