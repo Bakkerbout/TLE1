@@ -10,15 +10,16 @@
 </head>
 <body>
 <main>
-    <div class="bookshelf">
+    <div class="bookshelf-search">
         <div class="searchbar">
             <input type="text" id="searchInput" placeholder="Zoek een boek">
-            <button id="searchButton">Zoeken</button>
-
-            <!--            <div id="results" class="shelf-row"></div>-->
-
+            <button id="searchButton" type="button">Zoeken</button>
         </div>
-        <div id="results" class="shelf-row"></div>
+        <div class="results-container">
+
+            <div id="results" class="shelf-rows"></div>
+          
+        </div>
     </div>
     <div class="background-img"></div>
 </main>

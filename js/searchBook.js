@@ -5,6 +5,7 @@ function init() {
     let searchButton = document.getElementById('searchButton')
     searchButton.addEventListener('click', actionSearch)
     //event listener op zoek button zetten
+
 }
 
 function actionSearch() {
@@ -46,17 +47,34 @@ function getResults(data) {
 
 function displayResults(data) {
     const resultsDiv = document.getElementById("results");
+    const resultsContainer = document.querySelector(".results-container");
     resultsDiv.innerHTML = '';
+
+
     if (data && data.items && data.items.length > 0) {
+
+        let prevButton = document.createElement('prevBooks')
+        prevButton.id = "prevBooks"
+        prevButton.textContent = "<--"
+        prevButton.addEventListener('click', scrollLeft)
+
+        let nextButton = document.createElement('nextBooks')
+        nextButton.id = "nextBooks"
+        nextButton.textContent = "-->"
+        nextButton.addEventListener('click', scrollRight)
+
+        resultsContainer.prepend(prevButton);
+        resultsContainer.appendChild(nextButton);
+
+
         data.items.forEach(book => {
 
             const {title, authors, imageLinks} = book.volumeInfo
             const bookId = book.id
-            // const info = item.volumeInfo;
 
             // main container
             let bookDiv = document.createElement("div");
-            bookDiv.className = "book"
+            bookDiv.className = "book-cover"
             bookDiv.dataset.id = bookId
 
             // Titel
@@ -87,5 +105,15 @@ function displayResults(data) {
         });
     } else {
         resultsDiv.innerHTML = 'Geen resultaten gevonden.';
+
     }
 }
+
+function scrollLeft() {
+    document.getElementById('results').scrollBy({left: -300, behavior: 'smooth'})
+}
+
+function scrollRight() {
+    document.getElementById('results').scrollBy({left: 300, behavior: 'smooth'})
+}
+
