@@ -20,6 +20,8 @@ function loadBooks() {
 
             let shelfIndex = 0;
 
+            const readBooks = JSON.parse(localStorage.getItem('readBooks')) || [];
+
             data.items.forEach((book, i) => {
                 const title = book.volumeInfo.title;
                 const thumbnail = book.volumeInfo.imageLinks?.thumbnail;
@@ -27,13 +29,18 @@ function loadBooks() {
 
                 let bookDiv = document.createElement("div");
                 bookDiv.className = "book-spine";
+                bookDiv.dataset.id = bookId;
 
-                if (thumbnail) {
-                    let img = document.createElement("img");
-                    img.src = thumbnail;
-                    img.alt = title;
-                    bookDiv.appendChild(img);
+                if (readBooks.includes(bookId)) {
+                    bookDiv.classList.add('read');
                 }
+
+                // if (thumbnail) {
+                //     let img = document.createElement("img");
+                //     img.src = thumbnail;
+                //     img.alt = title;
+                //     bookDiv.appendChild(img);
+                // }
 
                 let bookTitle = document.createElement("p");
                 bookTitle.textContent = title;
