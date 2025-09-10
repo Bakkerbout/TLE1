@@ -27,7 +27,7 @@
             </div>
         </div>
 
-        <div class="search-box" style="position: absolute; top: 0; right: 0;">
+        <div class="search-box" style="position: absolute; top: 0; right: 0; opacity: 0.7">
             <a href="searchBook.php">Zoek boeken</a>
         </div>
     </div>
