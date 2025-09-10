@@ -13,24 +13,22 @@ function init() {
 }
 
 function displayBookDetails(book) {
-    let shelfDiv = document.querySelector(".shelfBackground")
-    // const detailsDiv = document.getElementById("book-details");
+    let shelfDiv = document.querySelector(".shelfBackground");
     const {title, authors, description, imageLinks} = book.volumeInfo;
 
-    shelfDiv.innerHTML = `
+    const detailsHTML = document.createElement("div");
+    detailsHTML.innerHTML = `
         <h2>${title || "Geen titel"}</h2>
         ${authors ? `<p>Auteur(s): ${authors.join(", ")}</p>` : ""}
         ${imageLinks?.thumbnail ? `<img src="${imageLinks.thumbnail}" alt="${title}">` : ""}
         <p>${description || "Geen beschrijving beschikbaar."}</p>
     `;
+    shelfDiv.prepend(detailsHTML);
 
-    let addBtn = document.createElement("button");
+    const addBtn = document.createElement("button");
     addBtn.textContent = "Voeg toe aan boekenkast";
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const bookId = urlParams.get("id");
-
-    addBtn.addEventListener("click", () => addToBookshelf(bookId));
+    addBtn.style.marginTop = "10px";
+    addBtn.addEventListener("click", () => addToBookshelf(book.id));
     shelfDiv.appendChild(addBtn);
 }
 

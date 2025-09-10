@@ -23,7 +23,9 @@ if (isset($_GET['id'])) {
             <div class="shelf" id="shelf-background">
                 <h1><?php echo $book['volumeInfo']['title']; ?></h1>
             </div>
-            <a href="index.php" id="markAsRead">Klaar met lezen</a>
+            <a href="#" id="markAsRead"
+               style="display: inline-block; margin-top: 10px; margin-left: 200px; padding: 8px 12px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">Markeer
+                als gelezen</a>
         </div>
         <div class="search-box" style="position: absolute; top: 20px; right: 0; opacity: 0.7;">
             <a href="index.php">Terug naar boekenkast</a>
@@ -36,14 +38,26 @@ if (isset($_GET['id'])) {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
 
-    markAsReadButton.addEventListener('click', () => {
-        if (id) {
-            let readBooks = JSON.parse(localStorage.getItem('readBooks')) || [];
-            if (!readBooks.includes(id)) {
-                readBooks.push(id);
-            }
-            localStorage.setItem('readBooks', JSON.stringify(readBooks));
+    let readBooks = JSON.parse(localStorage.getItem('readBooks')) || [];
+
+    if (readBooks.includes(id)) {
+        markAsReadButton.textContent = "Markeer als nog niet gelezen";
+    } else {
+        markAsReadButton.textContent = "Markeer als gelezen";
+    }
+
+    markAsReadButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        let readBooks = JSON.parse(localStorage.getItem('readBooks')) || [];
+
+        if (readBooks.includes(id)) {
+            readBooks = readBooks.filter(bookId => bookId !== id);
+            markAsReadButton.textContent = "Markeer als gelezen";
+        } else {
+            readBooks.push(id);
+            markAsReadButton.textContent = "Markeer als nog niet gelezen";
         }
+        localStorage.setItem('readBooks', JSON.stringify(readBooks));
     });
 </script>
 </body>
