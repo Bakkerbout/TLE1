@@ -16,6 +16,7 @@ if (isset($_GET['id'])) {
 <body>
 <main>
     <a href="index.php">Terug naar boekenkast</a>
+    <div id="book-details"></div>
     <div class="background-img"></div>
     <div class="shelfBackground">
         <div class="shelf" id="shelf-background">
