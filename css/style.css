@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    font-family: "Arial";
 }
 
 .background-img {
@@ -139,7 +140,7 @@
     height: 130px;
     background-color: #00B7B7;
     color: #ffffff;
-    font-family: "Arial";
+    /*font-family: "Arial";*/
     font-size: 13px;
     text-align: center;
     opacity: 1.1;
@@ -180,10 +181,12 @@ a {
 }
 
 .search-box {
-    padding: 10px 15px;
-    border: 2px solid #333;
-    border-radius: 8px;
-    background-color: #f0f0f0;
+    padding: 0 10px;
+    border: 3px solid #088;
+    border-left: none;
+    border-bottom: 10px solid #088;
+    background-color: #0CEAE3;
+    opacity: 0.7;
     height: 140px;
     display: flex;
     align-items: center;
@@ -192,6 +195,6 @@ a {
 
 .search-box a {
     font-weight: bold;
-    color: #000;
+    color: #ffffff;
     text-decoration: none;
 }

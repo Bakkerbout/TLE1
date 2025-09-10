@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <div style="position: relative; max-width: 1300px; margin: 0 auto;">
+    <div style="position: relative; max-width: 1238px; margin: 0 auto;">
         <div class="bookshelf" style="width: 100%;">
             <div class="shelf-row" id="shelf-3">
             </div>
@@ -31,7 +31,7 @@
             <a href="searchBook.php">Zoek boeken</a>
         </div>
     </div>
-    
+
     <div class="bookshelf">
         <div class="shelf-row" id="shelf-4">
         </div>
