@@ -110,7 +110,28 @@
 
 .book-title {
     word-break: break-word;
+    overflow-wrap: break-word;
+    /*inline-size: min-content;*/
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* max 2 regels */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
 }
+
+.authors {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    /*inline-size: min-content;*/
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* max 2 regels */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+}
+
 
 .book-spine {
     width: 70px;
