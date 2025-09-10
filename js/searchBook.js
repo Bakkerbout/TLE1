@@ -55,12 +55,14 @@ function displayResults(data) {
 
         let prevButton = document.createElement('prevBooks')
         prevButton.id = "prevBooks"
-        prevButton.textContent = "<--"
+        prevButton.classList.add("scroll-btn")
+        prevButton.textContent = "<"
         prevButton.addEventListener('click', scrollLeft)
 
         let nextButton = document.createElement('nextBooks')
         nextButton.id = "nextBooks"
-        nextButton.textContent = "-->"
+        nextButton.classList.add("scroll-btn")
+        nextButton.textContent = ">"
         nextButton.addEventListener('click', scrollRight)
 
         resultsContainer.prepend(prevButton);
@@ -80,6 +82,7 @@ function displayResults(data) {
             // Titel
             let bookTitle = document.createElement("h3");
             bookTitle.textContent = title || "Geen titel";
+            bookTitle.classList.add("book-title")
             bookDiv.appendChild(bookTitle);
 
             // Auteurs
