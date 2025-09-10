@@ -23,7 +23,6 @@
                 <div id="results" class="shelf-rows"></div>
             </div>
         </div>
-
     </div>
     <div class="background-img"></div>
 </main>

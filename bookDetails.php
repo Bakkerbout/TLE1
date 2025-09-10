@@ -15,15 +15,21 @@ if (isset($_GET['id'])) {
 </head>
 <body>
 <main>
-    <a href="index.php">Terug naar boekenkast</a>
-    <div id="book-details"></div>
-    <div class="background-img"></div>
-    <div class="shelfBackground">
-        <div class="shelf" id="shelf-background">
-            <h1><?php echo $book['volumeInfo']['title']; ?></h1>
+    <div style="position: relative; max-width: 1390px; margin: 0 auto;">
+
+        <div id="book-details"></div>
+        <div class="background-img"></div>
+        <div class="shelfBackground">
+            <div class="shelf" id="shelf-background">
+                <h1><?php echo $book['volumeInfo']['title']; ?></h1>
+            </div>
+            <a href="index.php" id="markAsRead">Klaar met lezen</a>
         </div>
-        <a href="index.php" id="markAsRead">Klaar met lezen</a>
+        <div class="search-box" style="position: absolute; top: 20px; right: 0; opacity: 0.7;">
+            <a href="index.php">Terug naar boekenkast</a>
+        </div>
     </div>
+
 </main>
 <script>
     const markAsReadButton = document.getElementById('markAsRead');
