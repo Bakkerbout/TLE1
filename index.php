@@ -23,6 +23,7 @@
 
     <div style="position: relative; max-width: 1238px; margin: 0 auto;">
         <div class="bookshelf" style="width: 100%;">
+            <img src="images/statue.png" style="margin-left: 800px; margin-bottom: -45px; height: 180px;" alt="plant">
             <div class="shelf-row" id="shelf-3">
             </div>
         </div>
@@ -33,6 +34,7 @@
     </div>
 
     <div class="bookshelf">
+        <img src="images/plant.png" style="margin-left: -800px; margin-bottom: -20px; height: 180px;" alt="plant">
         <div class="shelf-row" id="shelf-4">
         </div>
     </div>
