@@ -10,6 +10,7 @@
 </head>
 <body>
 <main>
+    <a href="index.php">Terug naar boekenkast</a>
     <div class="bookshelf-search">
         <div class="searchbar">
             <input type="text" id="searchInput" placeholder="Zoek een boek">
@@ -18,7 +19,7 @@
         <div class="results-container">
 
             <div id="results" class="shelf-rows"></div>
-          
+
         </div>
     </div>
     <div class="background-img"></div>

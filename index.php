@@ -11,7 +11,6 @@
 <body>
 <main>
     <div class="background-img"></div>
-    <a href="searchBook.php">Zoek boeken</a>
     <div class="bookshelf">
         <div class="shelf-row" id="shelf-1">
         </div>
@@ -22,11 +21,17 @@
         </div>
     </div>
 
-    <div class="bookshelf">
-        <div class="shelf-row" id="shelf-3">
+    <div style="position: relative; max-width: 1300px; margin: 0 auto;">
+        <div class="bookshelf" style="width: 100%;">
+            <div class="shelf-row" id="shelf-3">
+            </div>
+        </div>
+
+        <div class="search-box" style="position: absolute; top: 0; right: 0;">
+            <a href="searchBook.php">Zoek boeken</a>
         </div>
     </div>
-
+    
     <div class="bookshelf">
         <div class="shelf-row" id="shelf-4">
         </div>

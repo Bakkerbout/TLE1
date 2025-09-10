@@ -11,7 +11,7 @@ function init() {
 function actionSearch() {
     //kijken of er iets in de zoekbalk staat.
     // zo ja, haal de data uit de api op
-    // zo nee, geef een warning dat  r niks is ingevuld
+    // zo nee, geef een warning dat er niks is ingevuld
     const query = document.getElementById('searchInput').value;
     if (query) {
         fetchData(query);
