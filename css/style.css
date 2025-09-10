@@ -197,3 +197,16 @@ a {
     color: #ffffff;
     text-decoration: none;
 }
+
+.detailPageButton {
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 50px;
+    padding: 8px 12px;
+    background-color: #ffffff;
+    color: #088;
+    border-radius: 5px;
+    border: black;
+    font-size: 13px;
+}
+

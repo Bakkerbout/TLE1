@@ -21,11 +21,20 @@ if (isset($_GET['id'])) {
         <div class="background-img"></div>
         <div class="shelfBackground">
             <div class="shelf" id="shelf-background">
-                <h1><?php echo $book['volumeInfo']['title']; ?></h1>
+                <!--                <h1>--><?php //echo $book['volumeInfo']['title']; ?><!--</h1>-->
             </div>
             <a href="#" id="markAsRead"
-               style="display: inline-block; margin-top: 10px; margin-left: 200px; padding: 8px 12px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">Markeer
+               style="display: inline-block; text-decoration: none;
+    margin-top: 10px;
+    margin-left: 50px;
+    padding: 8px 12px;
+    background-color: #ffffff;
+    color: #088;
+    border-radius: 5px;
+     font-size: 13px;
+border: black;">Markeer
                 als gelezen</a>
+
         </div>
         <div class="search-box" style="position: absolute; top: 20px; right: 0; opacity: 0.7;">
             <a href="index.php">Terug naar boekenkast</a>
@@ -53,6 +62,7 @@ if (isset($_GET['id'])) {
         if (readBooks.includes(id)) {
             readBooks = readBooks.filter(bookId => bookId !== id);
             markAsReadButton.textContent = "Markeer als gelezen";
+
         } else {
             readBooks.push(id);
             markAsReadButton.textContent = "Markeer als nog niet gelezen";

@@ -13,8 +13,10 @@ function init() {
 }
 
 function displayBookDetails(book) {
+
+    console.log("API data:", book);
     let shelfDiv = document.querySelector(".shelfBackground");
-    const {title, authors, description, imageLinks} = book.volumeInfo;
+    const {title, authors, description, imageLinks, pageCount} = book.volumeInfo;
 
     const detailsHTML = document.createElement("div");
     detailsHTML.innerHTML = `
@@ -22,11 +24,13 @@ function displayBookDetails(book) {
         ${authors ? `<p>Auteur(s): ${authors.join(", ")}</p>` : ""}
         ${imageLinks?.thumbnail ? `<img src="${imageLinks.thumbnail}" alt="${title}">` : ""}
         <p>${description || "Geen beschrijving beschikbaar."}</p>
+        <p>Pagecount: ${pageCount || "Informatie niet beschikbaar"}</p>
     `;
     shelfDiv.prepend(detailsHTML);
 
     const addBtn = document.createElement("button");
     addBtn.textContent = "Voeg toe aan boekenkast";
+    addBtn.classList.add("detailPageButton")
     addBtn.style.marginTop = "10px";
     addBtn.addEventListener("click", () => addToBookshelf(book.id));
     shelfDiv.appendChild(addBtn);
