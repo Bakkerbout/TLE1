@@ -178,3 +178,20 @@
 a {
     text-decoration: none;
 }
+
+.search-box {
+    padding: 10px 15px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box a {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
