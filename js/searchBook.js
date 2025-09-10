@@ -50,6 +50,10 @@ function displayResults(data) {
     const resultsContainer = document.querySelector(".results-container");
     resultsDiv.innerHTML = '';
 
+    const oldPrev = document.getElementById("prevBooks");
+    const oldNext = document.getElementById("nextBooks");
+    if (oldPrev) oldPrev.remove();
+    if (oldNext) oldNext.remove();
 
     if (data && data.items && data.items.length > 0) {
 
@@ -89,6 +93,8 @@ function displayResults(data) {
             if (authors) {
                 let authorsElement = document.createElement("p");
                 authorsElement.textContent = "Auteur(s): " + authors.join(', ');
+                authorsElement.classList.add("authors")
+
                 bookDiv.appendChild(authorsElement);
             }
 
