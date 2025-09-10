@@ -13,10 +13,11 @@ function init() {
 }
 
 function displayBookDetails(book) {
-    const detailsDiv = document.getElementById("book-details");
+    let shelfDiv = document.querySelector(".shelfBackground")
+    // const detailsDiv = document.getElementById("book-details");
     const {title, authors, description, imageLinks} = book.volumeInfo;
 
-    detailsDiv.innerHTML = `
+    shelfDiv.innerHTML = `
         <h2>${title || "Geen titel"}</h2>
         ${authors ? `<p>Auteur(s): ${authors.join(", ")}</p>` : ""}
         ${imageLinks?.thumbnail ? `<img src="${imageLinks.thumbnail}" alt="${title}">` : ""}
@@ -30,7 +31,7 @@ function displayBookDetails(book) {
     const bookId = urlParams.get("id");
 
     addBtn.addEventListener("click", () => addToBookshelf(bookId));
-    detailsDiv.appendChild(addBtn);
+    shelfDiv.appendChild(addBtn);
 }
 
 function addToBookshelf(bookId) {

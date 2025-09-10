@@ -42,6 +42,7 @@
 
 }
 
+
 .results-container {
     max-width: 950px;
     margin: 20px auto;
@@ -166,11 +167,13 @@
     border-bottom: 10px solid #088;
     background-color: #0CEAE3;
     opacity: 0.7;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 0 20px;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: flex-end;*/
+    padding: 20px 20px;
+    gap: 15px;
 }
+
 
 a {
     text-decoration: none;
